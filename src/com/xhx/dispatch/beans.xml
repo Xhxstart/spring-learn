@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+ 	 xmlns:tx="http://www.springframework.org/schema/tx"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xmlns:util="http://www.springframework.org/schema/util"   
+     xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+      <!-- 引入配置属性文件 -->	
+      <context:property-placeholder location="classpath:com/xhx/dispatch/db.properties,classpath:com/xhx/dispatch/db2.properties"></context:property-placeholder>
+      <!-- 配置一个master对象 -->
+     <bean id="dbutil" class="com.xhx.dispatch.DBUtil">    
+       	<property name="name" value="${name}" ></property>         
+       	<property name="drivername" value="${drivername}" ></property>
+       	<property name="url" value="${url}" ></property>
+     </bean> 
+      <bean id="dbutil2" class="com.xhx.dispatch.DBUtil">    
+       	<property name="name" value="${jdbc.user}" ></property>         
+       	<property name="drivername" value="${jdbc.dirverClass}" ></property>
+       	<property name="url" value="${jdbc.jdbcUrl}" ></property>
+     </bean>       
+</beans>

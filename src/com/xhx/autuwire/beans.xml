@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+      <!-- 配置一个master对象 -->
+     <bean id="master" class="com.xhx.autuwire.Master" autowire="byName">    
+       	<property name="name" value="下" ></property>         
+     </bean> 
+      <!-- 配置一个dog对象 -->  
+       <bean id="dog" class="com.xhx.autuwire.Dog">
+         <property name="name" value="小黄"></property>
+         <property name="age" value="12"></property>
+     </bean>   
+</beans>
